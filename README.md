@@ -97,6 +97,8 @@ The total basic salary for 2024 stands at **\$12,833,314**, with total allowance
 
 ![Total-KPIs](Assets/Payroll%20Dashboard%20-%20Overall.png)
 
+![Employee-KPIs](Assets/Payroll%20Dashboard%20Employee%20Stats.png)
+
 ### Monthly Trends and Growth Analysis
 
 **Basic Salary Trends:**
