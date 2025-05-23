@@ -1,6 +1,6 @@
 # Data Portfolio: Employee Payroll Dashboard
 
-![Project-Main-Image](Assets/Images/Payroll%20Main%20Image.jpg)
+![Project-Main-Image](Assets/Payroll%20Dashboard%20Main%20Image.jpg)
 
 ## Objective
 This report presents a comprehensive analysis of the company's 2024 payroll data. By examining compensation structures, departmental trends, and payment methods, we aim to identify opportunities to optimize payroll processes, improve compensation equity, and reduce operational costs.
@@ -35,8 +35,7 @@ The primary data source for this analysis is a payroll dataset for the year 2024
 
 Each row in the dataset represents a payroll transaction for an individual.
 
-![Data Source](Assets/Images/Payroll%20-%20Data%20Source.png)
-*Consider placing a screenshot of a sample of your raw data or your data model view here.*
+![Data Source](Assets/Payroll%20Dashboard%20-%20Data%20Source.png)
 
 ### Tools Used
 The following tools were utilized for data familiarization, analysis, and visualization:
@@ -49,11 +48,14 @@ The dataset was loaded directly into Power BI. Key preparation steps included:
 
 * **Data Type Conversion**: Used Power Query to ensure all columns were assigned appropriate data types (e.g., PayDate as Date, financial metrics as Currency, IDs as Whole Number, and categorical columns as Text).
 * **Calendar Table Creation**: A dedicated calendar table was generated using DAX expressions to provide robust time intelligence capabilities. This table included Year, Month, Month Number, and Start of Month columns, with its Min and Max dates set to the Min and Max PayDate value of the salary dataset.
-* **Relationship Management**: The newly created calendar table was linked to the main salary data table via the PayDate column (in the salary data) and the Date column (in the calendar table), establishing a one-to-many relationship for effective filtering and aggregation across time.
-* **Measures Table Initialization**: An empty table was created to house all calculated measures, ensuring a clean and organized Power BI data model.
 
-![DAX-Code](Assets/Images/Payroll%20-%20Calendar%20Table%20DAX.png)
-*Consider placing a screenshot of your DAX code for the calendar table creation here.*
+![DAX-Code](Assets/Payroll%20Dashboard%20-%20Calendar%20Table.png)
+
+* **Relationship Management**: The newly created calendar table was linked to the main salary data table via the PayDate column (in the salary data) and the Date column (in the calendar table), establishing a one-to-many relationship for effective filtering and aggregation across time.
+
+![Relational-Table](Assets/Payroll%20Dashboard%20-%20Relational%20Table.png)
+
+* **Measures Table Initialization**: An empty table was created to house all calculated measures, ensuring a clean and organized Power BI data model.
 
 ### Data Exploration
 Initial data exploration involved familiarizing with the structure and content of the payroll dataset in Excel. This included reviewing the range of PayDate values, understanding the distribution of EmploymentType and Department, and observing the magnitude of BasicSalary, Allowances, Deductions, and NetPay.
@@ -63,12 +65,23 @@ The following data analysis techniques were employed in Power BI:
 
 * **Descriptive Analytics**: Created measures to calculate key performance indicators (KPIs) such as total basic salary, total allowances, total deductions, and total net pay. This provided a foundational understanding of the overall payroll expenditure for 2024.
 * **Time Intelligence Analysis**: Utilized DAX measures to calculate month-over-month growth rates for basic salary, allowances, deductions, and net pay. This enabled the identification of trends, seasonal patterns, and significant fluctuations over the year.
-* **Comparative Analysis**: Segmented financial metrics by Department and EmploymentType to compare payroll costs and compensation structures across different organizational units and employee categories.
+
+![Basic-Salary-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Basic%20Salary%20MoM.png)
+
+![Allowances-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Allowances%20MoM.png)
+
+![Deductions-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Deductions%20MoM.png)
+
+![Net-Pay-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Net%20SPay%20MoM.png)
+
+* **Comparative Analysis**: Segmented financial metrics by Department to compare payroll costs and compensation structures across different organizational units and employee categories.
 * **Top 5 Analysis**: Implemented a field parameter to dynamically identify and visualize the top 5 employees based on selected financial metrics (Basic Salary, Allowances, Deductions, Net Pay), facilitating targeted performance recognition.
+
+![Top-5](Assets/Payroll%20Dashboard%20-%20Top%205%20Employees.png)
+
 * **Forecasting**: Integrated Power BI's built-in forecasting capabilities on line charts to predict future trends for key payroll metrics, offering a forward-looking perspective for financial planning.
 
-![Overall-KPIs](Assets/Images/Payroll%20-%20Overall%20KPIs.png)
-*Consider placing a screenshot of your main KPI cards on the overview page here.*
+![KPI-Forecasting](Assets/Payroll%20Dashboard%20-%20KPI%20Forecasting.png)
 
 ## Future Considerations for Data Analysis
 To further enhance the insights derived from this payroll dashboard, future analyses could explore:
@@ -82,48 +95,62 @@ To further enhance the insights derived from this payroll dashboard, future anal
 ### Key Financial Metrics Overview
 The total basic salary for 2024 stands at **\$12,833,314**, with total allowances at **\$1,618,928**, and total deductions at **\$736,063**, culminating in a total net pay of **\$13,716,179**. These figures represent the comprehensive financial outlay for employee compensation throughout the year.
 
-![Total-KPIs](Assets/Images/Payroll%20-%20Total%20KPIs.png)
-*Consider placing a screenshot of your main total KPIs on the overview page here.*
+![Total-KPIs](Assets/Payroll%20Dashboard%20-%20Overall.png)
 
 ### Monthly Trends and Growth Analysis
 
 **Basic Salary Trends:**
 Basic salary demonstrated a robust upward trajectory throughout 2024.
 * **Strong Growth Phases**: Notable month-over-month (MoM) increases were observed in **February (+10%)**, **April (+18%)**, **June (+8%)**, **September (+4%)**, and **December (+7%)**. The **18% surge in April** is particularly significant, indicating a potential company-wide salary adjustment.
+
+![April-MoM-1](Assets/Payroll%20Dashboard%20-%20April%20MoM%20Growth.png)
+
 * **Plateau Periods**: Basic salary remained stable in March, May, July, August, and October, suggesting periods of consistent payroll without major adjustments.
 * **Overall Annual Growth**: From January (\$802,141) to December (\$1,283,347), the total basic salary saw a significant **60% increase**, reflecting substantial growth in the company's compensation structure over the year.
 
-![Basic-Salary-Trend](Assets/Images/Payroll%20-%20Basic%20Salary%20Trend.png)
-*Consider placing a screenshot of the Basic Salary KPI card and its trend line chart with forecasting here.*
+![January-Basic-Salary](Assets/Payroll%20Dashboard%20-%20January%20Basic%20Salary.png)
+
+![December-Basic-Salary](Assets/Payroll%20Dashboard%20-%20December%20Basic%20Salary.png)
 
 **Allowances Trends:**
 Allowances largely mirrored the basic salary growth, indicating a proportional increase with base compensation.
 * **Consistent Increases**: Allowances also experienced a **10% increase in February**, an **18% increase in April**, an **8% increase in June**, a **4% increase in September**, and a **7% increase in December**. This synchronized growth suggests that allowances are often tied directly to basic salary or overall compensation policy.
+
+![February-Allowances-MoM](Assets/Payroll%20Dashboard%20-%20February%20Allowances%20MoM%20Growth.png)
+
+![April-Allowances-MoM](Assets/Payroll%20Dashboard%20-%20April%20Allowances%20MoM%20Growth.png)
+
 * **Mirroring Plateaus**: Similar to basic salary, allowances also flattened out in March, May, July, August, and October.
 * **Overall Annual Growth**: Total allowances grew from \$101,238 in January to \$161,907 in December, an impressive **60% increase** mirroring the basic salary's upward trend.
 
-![Allowances-Trend](Assets/Images/Payroll%20-%20Allowances%20Trend.png)
-*Consider placing a screenshot of the Allowances KPI card and its trend line chart with forecasting here.*
+![January-Allowances](Assets/Payroll%20Dashboard%20-%20January%20Allowances.png)
+
+![December-Allowances](Assets/Payroll%20Dashboard%20-%20December%20Allowances.png)
 
 **Deductions Volatility:**
 Deductions exhibited significant and often unpredictable month-over-month fluctuations.
 * **Spikes and Drops**:
     * A remarkable **50% increase in February** (\$23,766 to \$35,650) suggests a new deduction type or a one-time adjustment.
-    * This was followed by a sharp **34% increase in March** (\$35,650 to \$47,639), indicating a further escalation or new persistent deductions.
-    * Another substantial **56% increase in June** (\$52,320 to \$81,626) and a **62% increase in October** (\$49,928 to \$80,895) stand out as major outliers, requiring granular investigation to identify the root causes, such as changes in tax withholding, benefits enrollment, or loan repayments.
-* **Impact**: These volatile deduction patterns introduce unpredictability in net pay and warrant a deeper dive by the finance department to understand and potentially stabilize these outflows.
+ 
+* ![February-Deductions-MoM](Assets/Payroll%20Dashboard%20-%20February%20Deductions%20MoM%20Growth.png)
 
-![Deductions-Trend](Assets/Images/Payroll%20-%20Deductions%20Trend.jpg)
-*Consider placing a screenshot of the Deductions KPI card and its trend line chart with forecasting here.*
+    * This was followed by a sharp **34% increase in March** (\$35,650 to \$47,639), indicating a further escalation or new persistent deductions.
+ 
+* ![March-Deductions-MoM](Assets/Payroll%20Dashboard%20-%20March%20Deductions%20MoM%20Growth.png)
+
+    * Another substantial **56% increase in June** (\$52,320 to \$81,626) and a **62% increase in October** (\$49,928 to \$80,895) stand out as major outliers, requiring granular investigation to identify the root causes, such as changes in tax withholding, benefits enrollment, or loan repayments.
+ 
+* ![June-Deductions-MoM](Assets/Payroll%20Dashboard%20-%20June%20Deductions%20MoM%20Growth.png)
+
+* ![October-Deductions-MoM](Assets/Payroll%20Dashboard%20-%20October%20Deductions%20MoM%20Growth.png)
+
+* **Impact**: These volatile deduction patterns introduce unpredictability in net pay and warrant a deeper dive by the finance department to understand and potentially stabilize these outflows.
 
 **Net Pay Trends:**
 Net pay generally followed the positive trend of basic salary and allowances, albeit with some minor dips influenced by deduction spikes.
 * **Consistent Growth**: Major MoM increases in net pay were observed in **February (+9%)**, **April (+19%)**, **June (+5%)**, **July (+2%)**, **September (+6%)**, and **December (+7%)**. The **19% increase in April** aligns with the basic salary surge, demonstrating the direct impact of compensation adjustments on take-home pay.
 * **Minor Fluctuations**: Small decreases were noted in March (-1%), May (<1%), and August (-1%), primarily attributable to the corresponding increases in deductions during those periods.
 * **Overall Annual Growth**: Net pay significantly increased from \$879,613 in January to \$1,357,215 in December, representing a **~54% annual growth**, reflecting the overall expansion of the company's payroll.
-
-![Net-Pay-Trend](Assets/Images/Payroll%20-%20Net%20Pay%20Trend.png)
-*Consider placing a screenshot of the Net Pay KPI card and its trend line chart with forecasting here.*
 
 ### Employee Distribution and Demographics
 The company employs a total of **200 individuals**, with a diverse workforce distribution:
@@ -133,8 +160,7 @@ The company employs a total of **200 individuals**, with a diverse workforce dis
 
 This significant proportion of interns and part-time employees (collectively 71.5%) suggests a flexible workforce model, potentially optimized for project-based work.
 
-![Employee-Type-Donut](Assets/Images/Payroll%20-%20Employee%20Type%20Donut.png)
-*Consider placing a screenshot of the employee percentage breakdown donut chart here.*
+![Employee-Numbers](Assets/Payroll%20Dashboard%20-%20Employee%20Numbers%20by%20Employment%20Type.png)
 
 **Employee Count by Department and Employment Type:**
 * **Marketing Department**: Exhibits a balanced distribution across employment types, with 20 Full-time, 20 Internship, and 20 Part-time employees, suggesting a robust and adaptable team structure.
@@ -143,24 +169,23 @@ This significant proportion of interns and part-time employees (collectively 71.
 * **Sales Department**: Has a lower number of full-time employees (5) but a significant number of interns (14) and part-time staff (11), reflecting a potentially commission-based or seasonal workforce model.
 * **IT Department**: Has the smallest overall headcount, with a somewhat balanced distribution (7 Full-time, 9 Internship, 10 Part-time), indicating a more specialized and streamlined team.
 
-![Employees-by-Department-Employment-Type](Assets/Images/Payroll%20-%20Employees%20by%20Department%20Employment%20Type.png)
-*Consider placing a screenshot of the stacked bar chart showing employees per department by employment type here.*
+![Employees-Numbers-By-Department-&-Employment-Type](Assets/Payroll%20Dashboard%20-%20Employee%20Numbers%20by%20Department.png)
 
 ### Departmental Payroll Analysis
 * **Marketing Department**: Consistently leads in total basic salary (\$3,575,209) and net pay (\$3,810,816) for the year. This could be due to a larger headcount or higher average salaries within the Marketing function, potentially reflecting strategic investment in talent management.
 * **HR Department**: Ranks second in total basic salary (\$3,116,481) and net pay (\$3,337,808), demonstrating a substantial investment in HR talent and operations.
 * **IT Department**: Exhibits the lowest total basic salary (\$1,623,471) and net pay (\$1,725,555), suggesting a more streamlined team or potentially outsourced functions.
 
-![Departmental-Payroll-Bar-Chart](Assets/Images/Payroll%20-%20Departmental%20Payroll%20Bar%20Chart.png)
-*Consider placing a screenshot of the bar chart showing basic salary, net pay, allowances, and deductions per department here.*
+![KPIs-By-Department](Assets/Payroll%20Dashboard%20-%20KPIs%20By%20Department.png)
 
 ### Payment Method Distribution
 * **Bank Transfer**: Dominates payment methods, accounting for **46.6% (\$6,393,292)** of total net pay.
 * **Mobile Money**: Accounts for **30.7% (\$4,210,027)**, indicating its significant adoption.
 * **Cash**: Introduced in May, quickly grew to represent **22.7% (\$3,112,860)** of total net pay by year-end, highlighting a strategic shift in payment disbursement. The transition from solely Bank Transfer and Mobile Money in earlier months to incorporating Cash in May and subsequent months suggests a strategic move to accommodate employee preferences or operational efficiencies. This rapid adoption indicates a need to monitor its associated administrative costs and security implications closely.
 
-![Payment-Method-Donut](Assets/Images/Payroll%20-%20Payment%20Method%20Donut.png)
-*Consider placing a screenshot of the net pay percentage breakdown by payment method donut chart here.*
+![Payment-Method-Legend](Assets/Payroll%20Dashboard%20-%20Payment%20Method%20By%20Employment%20Type%20Legend.png)
+
+![Payment-Method-Breakdown](Assets/Payroll%20Dashboard%20-%20Payment%20Method%20By%20Breakdown.png)
 
 **Monthly Net Pay by Payment Method Per Employment Type:**
 The breakdown by payment method and employment type reveals interesting patterns:
@@ -168,16 +193,16 @@ The breakdown by payment method and employment type reveals interesting patterns
 * **Part-time Employees**: Consistently rely more on Bank Transfer and Mobile Money, with Cash payments being less prevalent for this group compared to interns, though still significant from June onwards.
 * **Full-time Employees**: Exhibit a mixed payment preference, with a balanced distribution across Bank Transfer, Mobile Money, and Cash from June to December, indicating a diverse set of needs or accessibility.
 
-![Net-Pay-by-Payment-Method-Employment-Type](Assets/Images/Payroll%20-%20Net%20Pay%20by%20Payment%20Method%20Employment%20Type.png)
-*Consider placing a screenshot of the stacked column chart displaying net pay per payment method for each employment type here.*
+![Net-Pay-Payment-Method-By-Employment-Type-(June---December)](Assets/Payroll%20Dashboard%20-%20Payment%20Method%20By%20Employment%20Type.png)
 
 ### Top 5 Employee Compensation Analysis
 **Angela Phillips** consistently ranks as the top earner across basic salary, allowances, and net pay throughout the year, accumulating a total basic salary of **\$79,900**, allowances of **\$9,851**, and net pay of **\$88,052**. This consistent leadership positions her as a key contributor to the company and potentially a benchmark for compensation.
 
+![Top-5-Employees-By-Net-Pay](Assets/Payroll%20Dashboard%20-%20Top%205%20Employees%20Net%20Pay.png)
+
 **Amber Taylor** consistently features as the number 1 employee for deductions, with a total of **\$4,807**. This outlier status warrants a deeper investigation into the specific reasons for her higher deductions, which could range from high tax brackets, specific benefit enrollments, or perhaps loan repayments. Understanding this could provide insights into general employee financial behaviour or specific policy impacts.
 
-![Top-5-Employees](Assets/Images/Payroll%20-%20Top%205%20Employees.png)
-*Consider placing a screenshot of the clustered bar chart showing the top 5 employees based on the field parameter filter here.*
+![Top-5-Employees-By-Deductions](Assets/Payroll%20Dashboard%20-%20Top%205%20Employees%20Deductions.png)
 
 ## Recommendations
 Based on the comprehensive analysis of the 2024 payroll data, the following strategic recommendations are proposed to optimize financial management, enhance employee satisfaction, and support strategic decision-making:
