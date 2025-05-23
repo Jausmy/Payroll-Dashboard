@@ -72,7 +72,7 @@ The following data analysis techniques were employed in Power BI:
 
 ![Deductions-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Deductions%20MoM.png)
 
-![Net-Pay-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Net%20SPay%20MoM.png)
+![Net-Pay-MoM-DAX](Assets/Payroll%20Dashboard%20-%20Net%20Pay%20MoM.png)
 
 * **Comparative Analysis**: Segmented financial metrics by Department to compare payroll costs and compensation structures across different organizational units and employee categories.
 * **Top 5 Analysis**: Implemented a field parameter to dynamically identify and visualize the top 5 employees based on selected financial metrics (Basic Salary, Allowances, Deductions, Net Pay), facilitating targeted performance recognition.
