@@ -21,7 +21,7 @@ The primary data source for this analysis is a payroll dataset for the year 2024
 * PayrollID
 * EmployeeID
 * FullName
-* Department: (Marketing, HR, Finance, Sales, IT).
+* Department (Marketing, HR, Finance, Sales, IT).
 * JobTitle
 * PayDate
 * EmploymentType (Internship, Part-time, Full-time).
@@ -30,7 +30,7 @@ The primary data source for this analysis is a payroll dataset for the year 2024
 * Deductions
 * GrossPay
 * NetPay
-* PaymentMethod(Bank Transfer, Mobile Money, Cash).
+* PaymentMethod (Bank Transfer, Mobile Money, Cash).
 * BankName
 
 Each row in the dataset represents a payroll transaction for an individual.
